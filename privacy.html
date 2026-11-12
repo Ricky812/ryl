@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Privacy | Re You Life</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="tracker.js"></script>
+    <script defer src="privacy.js"></script>
+</head>
+<body>
+    <main class="dashboard-shell">
+        <header class="dashboard-header">
+            <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RE YOU LIFE<small>PRIVACY</small></span></a>
+            <a class="back-link" href="index.html">Back to website <span aria-hidden="true">↗</span></a>
+        </header>
+        <section class="panel privacy-policy" aria-labelledby="privacy-title">
+            <p class="eyebrow">Your privacy</p>
+            <h1 id="privacy-title">Privacy notice</h1>
+            <div class="policy-copy">
+                <p>This site uses privacy-conscious, first-party analytics to understand website visits and improve its pages.</p>
+                <h2>Analytics information</h2>
+                <ul>
+                    <li>A random anonymous browser ID is stored in a first-party cookie for up to 90 days.</li>
+                    <li>For each page view, the site records the page path and title, referring page, campaign tags, screen dimensions, language, timezone, browser, operating system, device category, and approximate location.</li>
+                    <li>The server may use your IP address briefly to look up an approximate location in GeoLite2. It does not store the IP address or raw browser User-Agent.</li>
+                    <li>Page URL and referrer query strings are discarded. Analytics data is not used for device fingerprinting or cross-site tracking.</li>
+                    <li>Visit records are automatically deleted after 12 months. Analytics records are not linked to appointment contact details.</li>
+                </ul>
+                <h2>Appointment information</h2>
+                <p>When you request an appointment, we collect your name, email address, phone number, date of birth, selected programme, and requested appointment date and time to manage your request. These details are stored in the site's private database and are available to the team handling appointments. They are kept separate from anonymous analytics data.</p>
+                <h2>Delete this browser's analytics data</h2>
+                <p>Use the button below to delete visit records associated with this browser's anonymous ID and clear its analytics cookie. This does not remove contact or appointment details submitted separately.</p>
+                <button id="delete-analytics-data" class="primary-button" type="button">Delete my analytics data</button>
+                <p id="privacy-status" class="status" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

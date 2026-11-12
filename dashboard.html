@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Re You Life | Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css?v=appointment-blocks">
+</head>
+<body>
+    <main class="dashboard-shell">
+        <header class="dashboard-header">
+            <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RE YOU LIFE<small>INSIGHTS</small></span></a>
+            <a class="back-link" href="index.html">Back to website <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <section id="login-section" class="login-card" aria-labelledby="login-title">
+            <p class="eyebrow">Private dashboard</p>
+            <h1 id="login-title">Welcome back.</h1>
+            <p class="intro">Enter your dashboard password to view privacy-friendly visitor activity and conversions.</p>
+            <form id="login-form">
+                <label for="dashboard-password">Dashboard password</label>
+                <input id="dashboard-password" type="password" required maxlength="256" autocomplete="current-password" placeholder="Enter your password">
+                <button type="submit">Open insights</button>
+            </form>
+            <p id="login-status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="dashboard-content" class="hidden" aria-labelledby="dashboard-title">
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">Performance overview</p>
+                    <h1 id="dashboard-title">Your insights</h1>
+                    <p class="intro">Anonymous visitor activity and appointment requests from this website.</p>
+                </div>
+                <div class="heading-actions">
+                    <button id="refresh-dashboard" class="secondary-button" type="button">Refresh</button>
+                    <button id="logout-dashboard" class="secondary-button" type="button">Sign out</button>
+                </div>
+            </div>
+
+            <p id="dashboard-status" class="status" role="status" aria-live="polite"></p>
+            <section class="panel visitor-controls" aria-label="Visitor report filters">
+                <div class="date-filter">
+                    <label for="visitor-from">From</label>
+                    <input id="visitor-from" type="date">
+                    <label for="visitor-to">To</label>
+                    <input id="visitor-to" type="date">
+                    <button id="apply-visitor-filter" class="secondary-button" type="button">Apply dates</button>
+                </div>
+                <div class="export-buttons">
+                    <button id="download-appointment-csv" class="secondary-button" type="button">Export visitor appointments CSV</button>
+                </div>
+            </section>
+            <p id="visitor-status" class="status" role="status" aria-live="polite"></p>
+            <div id="visitor-metric-cards" class="metric-grid visitor-metrics"></div>
+            <div class="analytics-grid">
+                <section class="panel" aria-labelledby="visits-chart-title">
+                    <div class="panel-heading"><div><h2 id="visits-chart-title">Visits over time</h2></div></div>
+                    <div class="chart-canvas"><canvas id="visits-chart" aria-label="Daily visits"></canvas></div>
+                </section>
+                <section class="panel" aria-labelledby="devices-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Audience</p><h2 id="devices-title">Devices</h2></div></div>
+                    <div class="chart-canvas doughnut-canvas"><canvas id="devices-chart" aria-label="Visits by device"></canvas></div>
+                </section>
+            </div>
+            <div class="table-grid visitor-tables">
+                <section class="panel" aria-labelledby="pages-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Content</p><h2 id="pages-title">Top pages</h2></div></div>
+                    <div class="table-scroll"><table><thead><tr><th>Page</th><th>Views</th><th>Avg. time</th></tr></thead><tbody id="top-pages-table"></tbody></table></div>
+                    <p id="empty-pages" class="empty-state hidden">No visits in this date range.</p>
+                </section>
+                <section class="panel" aria-labelledby="locations-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Approximate visitor location</p><h2 id="locations-title">Visitors by location</h2><a class="location-attribution" href="https://db-ip.com" target="_blank" rel="noopener noreferrer">IP geolocation by DB-IP.com</a></div></div>
+                    <div class="table-scroll"><table><thead><tr><th>Country / state / city</th><th>Visits</th></tr></thead><tbody id="locations-table"></tbody></table></div>
+                    <p id="empty-locations" class="empty-state hidden">Location data is unavailable until GeoLite2 is configured.</p>
+                </section>
+                <section class="panel" aria-labelledby="sources-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Acquisition</p><h2 id="sources-title">Traffic sources</h2></div></div>
+                    <div class="table-scroll"><table><thead><tr><th>Source</th><th>Visits</th></tr></thead><tbody id="sources-table"></tbody></table></div>
+                </section>
+            </div>
+            <div id="metric-cards" class="metric-grid"></div>
+
+            <section class="panel activity-panel" aria-labelledby="activity-title">
+                <div class="panel-heading">
+                    <div><p class="eyebrow">Last seven days</p><h2 id="activity-title">Visitor activity</h2></div>
+                    <span class="chart-legend"><i></i> Visits</span>
+                </div>
+                <div id="activity-chart" class="activity-chart" aria-label="Daily website visits"></div>
+            </section>
+
+            <div class="table-grid">
+                <section class="panel" aria-labelledby="demo-bookings-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Demo calls</p><h2 id="demo-bookings-title">10-Minute Demo Call Bookings</h2></div></div>
+                    <div class="table-scroll">
+                        <table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Programme</th><th>Time (IST)</th><th>Status</th></tr></thead><tbody id="demo-bookings-table"></tbody></table>
+                    </div>
+                    <p id="empty-demo-bookings" class="empty-state hidden">No demo call bookings yet.</p>
+                </section>
+                <section class="panel" aria-labelledby="companionship-bookings-title">
+                    <div class="panel-heading"><div><p class="eyebrow">Companionship programmes</p><h2 id="companionship-bookings-title">Explore Companionship Options</h2></div></div>
+                    <div class="table-scroll">
+                        <table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Programme</th><th>Time (IST)</th><th>Status</th></tr></thead><tbody id="companionship-bookings-table"></tbody></table>
+                    </div>
+                    <p id="empty-companionship-bookings" class="empty-state hidden">No companionship bookings yet.</p>
+                </section>
+            </div>
+            <section class="panel availability-panel" aria-labelledby="availability-blocks-title">
+                <div class="panel-heading">
+                    <div><p class="eyebrow">Appointments</p><h2 id="availability-blocks-title">Manage availability</h2></div>
+                </div>
+                <p class="availability-intro">Block a full date or one appointment time. Existing appointment requests are not affected.</p>
+                <form id="availability-block-form" class="availability-block-form">
+                    <label class="availability-field" for="availability-block-date">
+                        Date
+                        <input id="availability-block-date" type="date" required>
+                    </label>
+                    <label class="availability-field" for="availability-block-time">
+                        Time
+                        <select id="availability-block-time">
+                            <option value="">Entire day</option>
+                        </select>
+                    </label>
+                    <button class="secondary-button" type="submit">Block availability</button>
+                </form>
+                <p id="availability-block-status" class="status" role="status" aria-live="polite"></p>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Date</th><th>Time</th><th>Action</th></tr></thead>
+                        <tbody id="appointment-blocks-table"></tbody>
+                    </table>
+                </div>
+                <p id="empty-appointment-blocks" class="empty-state hidden">No dates or times are currently blocked.</p>
+            </section>
+            <p class="privacy-note">The anonymous first-party cookie lasts 90 days; visit records expire after 12 months. IP addresses are not stored. Appointment requests are pending until the team confirms them.</p>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="dashboard.js?v=appointments-export-only"></script>
+</body>
+</html>

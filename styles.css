@@ -1,0 +1,338 @@
+body {
+    background-color: #1b1d22;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3c638 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+            
+        .gold-border-glow {
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+        }
+        .glass-panel {
+            background: rgba(22, 25, 32, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0f12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2e39;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        a,
+        button,
+        input,
+        select {
+            -webkit-tap-highlight-color: transparent;
+        }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        .diagnostic-card:focus-visible {
+            outline: 2px solid #f3c638;
+            outline-offset: 3px;
+        }
+        .diagnostic-card {
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+        }
+        .diagnostic-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.65);
+            box-shadow: 0 12px 30px -18px rgba(212, 175, 55, 0.55);
+        }
+        .diagnostic-card:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+        .phase-btn:hover {
+            transform: translateY(-2px);
+        }
+        .testimonial-track {
+            transition: transform 450ms ease;
+        }
+        .testimonial-nav {
+            display: inline-flex;
+            flex: 0 0 auto;
+            width: 2.75rem;
+            height: 2.75rem;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 9999px;
+            background: rgba(22, 25, 32, 0.9);
+            color: #d4af37;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+        .testimonial-nav:hover {
+            transform: scale(1.06);
+            border-color: #d4af37;
+            background: #d4af37;
+            color: #0d0f12;
+        }
+        .testimonial-nav:active {
+            transform: scale(0.96);
+        }
+        .testimonial-slide {
+            flex: 0 0 100%;
+            cursor: pointer;
+        }
+        .testimonial-slide:focus-visible {
+            outline: 2px solid #f3c638;
+            outline-offset: 3px;
+        }
+        @media (min-width: 768px) {
+            .testimonial-slide {
+                flex-basis: calc((100% - 4rem) / 3);
+            }
+        }
+        .gold-border-glow {
+            transition: box-shadow 220ms ease, transform 220ms ease;
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 32px -4px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+        }
+        #booking-modal:not(.hidden) > div {
+            animation: modal-enter 220ms ease-out both;
+        }
+        @keyframes modal-enter {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .relative.min-h-screen::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .relative.min-h-screen {
+            background-image: radial-gradient(ellipse at top, #303238 0%, #1b1d22 65%, #1b1d22 100%);
+        }
+
+        body section.bg-brand-dark,
+        body footer.bg-brand-dark {
+            background-color: #1b1d22;
+        }
+
+        body section.bg-neutral-950 {
+            background-color: #191b20;
+        }
+
+        .companion-success-showcase {
+            height: 500px;
+        }
+
+        .success-portrait-track {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            animation: success-portrait-scroll 24s infinite;
+        }
+
+        .success-portrait {
+            display: block;
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        @keyframes success-portrait-scroll {
+            0%, 18% { transform: translateY(0); }
+            20%, 38% { transform: translateY(-500px); }
+            40%, 58% { transform: translateY(-1000px); }
+            60%, 78% { transform: translateY(-1500px); }
+            80%, 98% { transform: translateY(-2000px); }
+            100% { transform: translateY(-2500px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .success-portrait-track {
+                animation: none;
+            }
+        }
+
+        .relative.min-h-screen::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 75%;
+            z-index: 1;
+            background: radial-gradient(ellipse at top right, rgba(212, 175, 55, 0.16), transparent 68%);
+            pointer-events: none;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 45;
+            background: radial-gradient(180px circle at var(--pointer-x, -500px) var(--pointer-y, -500px), rgba(212, 175, 55, 0.14), transparent 75%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        /* Calendar popup: Flatpickr's outer .flatpickr-calendar container. */
+        .flatpickr-calendar {
+            box-sizing: border-box;
+            width: 350px;
+            max-width: calc(100vw - 24px);
+            padding: 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 12px 32px rgba(17, 24, 39, 0.16);
+            color: #1f2937;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .flatpickr-calendar.arrowTop::before,
+        .flatpickr-calendar.arrowTop::after {
+            border-bottom-color: #fff;
+        }
+
+        .flatpickr-calendar.arrowBottom::before,
+        .flatpickr-calendar.arrowBottom::after {
+            border-top-color: #fff;
+        }
+
+        /* Header: .flatpickr-months, month dropdown, year input, and navigation arrows. */
+        .flatpickr-months {
+            align-items: center;
+        }
+
+        .flatpickr-months .flatpickr-month,
+        .flatpickr-current-month,
+        .flatpickr-monthDropdown-months,
+        .flatpickr-current-month input.cur-year {
+            color: #1f2937;
+            fill: #1f2937;
+        }
+
+        .flatpickr-months .flatpickr-prev-month:hover svg,
+        .flatpickr-months .flatpickr-next-month:hover svg {
+            fill: #b38700;
+        }
+
+        .flatpickr-monthDropdown-months,
+        .flatpickr-current-month input.cur-year {
+            font-weight: 600;
+        }
+
+        /* Week row: .flatpickr-weekdays and its .flatpickr-weekday labels. */
+        .flatpickr-weekdays {
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        span.flatpickr-weekday {
+            color: #6b7280;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Date grid: .dayContainer holds each .flatpickr-day cell. */
+        .flatpickr-days,
+        .flatpickr-days .dayContainer {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        .flatpickr-day {
+            box-sizing: border-box;
+            flex-basis: calc(100% / 7);
+            max-width: none;
+            height: 44px;
+            line-height: 44px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: #4b5563;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+        }
+
+        .flatpickr-day:hover,
+        .flatpickr-day:focus {
+            border-color: #f3c638;
+            background: #f3c638;
+            color: #1f2937;
+        }
+
+        .flatpickr-day.today {
+            border-color: #f3c638;
+        }
+
+        .flatpickr-day.selected,
+        .flatpickr-day.startRange,
+        .flatpickr-day.endRange,
+        .flatpickr-day.selected:hover,
+        .flatpickr-day.startRange:hover,
+        .flatpickr-day.endRange:hover {
+            border-color: #f3c638;
+            background: #f3c638;
+            color: #1f2937;
+        }
+
+        .flatpickr-day.inRange,
+        .flatpickr-day.inRange:hover {
+            border-color: transparent;
+            background: rgba(243, 198, 56, 0.2);
+            box-shadow: -5px 0 0 rgba(243, 198, 56, 0.2), 5px 0 0 rgba(243, 198, 56, 0.2);
+            color: #374151;
+        }
+
+        /* Adjacent-month, disabled, and out-of-range dates: muted day-cell states. */
+        .flatpickr-day.prevMonthDay,
+        .flatpickr-day.nextMonthDay,
+        .flatpickr-day.flatpickr-disabled,
+        .flatpickr-day.notAllowed {
+            color: #c4c9d1;
+        }
+
+        .flatpickr-day.flatpickr-disabled,
+        .flatpickr-day.notAllowed {
+            cursor: not-allowed;
+        }
+
